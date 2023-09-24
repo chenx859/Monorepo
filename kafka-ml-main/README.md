@@ -8,19 +8,14 @@ This project intends to dissect the intricacies connecting the realm of streamin
 
 ## Installation
 
-1. Create a virtual environment using conda :
+1. Create a virtual environment :
 ```bash
-conda create -n rt-ml
-```
-you can display the virtual environments that you have in your machine using this command :  
-
-```bash
-conda info --envs
+python3 -m venv myenv
 ```
 2. Activate your virtual environment : 
 
 ```bash
-conda activate rt-ml
+source myenv/bin/activate
 ```
 3. Start zookeeper service :
 
@@ -55,7 +50,7 @@ bin/kafka-topics.sh --create --topic anomalies --bootstrap-server localhost:9092
 
 9. Run the script that will allow our model to detect the anomalies and publish them to the 'anomalies' topic :
 ```bash
-python src/data_streaming/detector.py
+python3 src/data_streaming/detector.py
 ```
 
 10. list the anomalies from the 'anomalies' topic :
@@ -63,14 +58,7 @@ python src/data_streaming/detector.py
 bin/kafka-console-consumer.sh  --topic anomalies --bootstrap-server localhost:9092
 ```
 
-## 🚀 About Me
-My name is Chiheb Mhamdi , I'm an IT-Engineer who is seeking for improving his skills , expanding his knowledge . I'm open to exchange experiences and projects 
-
-## 🔗 Links
-
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mhamdi-chiheb//)
-
-
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/__chiheb_mh/)
-
-
+10. Start Kafdrop UI using docker combose:
+```bash
+docker compose up -d
+```
