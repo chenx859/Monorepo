@@ -16,8 +16,7 @@ def detect():
     consumer = create_consumer(topic=TRANSACTIONS_TOPIC, group_id=TRANSACTIONS_CONSUMER_GROUP)
 
     producer = create_producer()
-
-    clf = load('/Users/chihebmhamdi/Desktop/Job/kafka/realtime-ML/my-project/artifacts/models/lof.joblib')
+    clf = load('/Users/ryanchen/Monorepo/kafka-ml-main/artifacts/models/lof.joblib')
 
     while True:
         message = consumer.poll(timeout=50)
