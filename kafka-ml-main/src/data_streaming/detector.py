@@ -17,8 +17,8 @@ def detect():
 
     producer = create_producer()
 
-    clf = load('/Users/ryanchen/monorepo/kafka-ml-main/artifacts/models/lof.joblib')
-    
+    clf = load('/Users/chihebmhamdi/Desktop/Job/kafka/realtime-ML/my-project/artifacts/models/lof.joblib')
+
     while True:
         message = consumer.poll(timeout=50)
         if message is None:
