@@ -17,48 +17,39 @@ python3 -m venv myenv
 ```bash
 source myenv/bin/activate
 ```
-3. Start zookeeper service :
+3. Start zookeeper, kafka and kafdrop service :
 
 ```bash
-bin/zookeeper-server-start.sh config/zookeeper.properties
-```
-4. Start kafka broker :
-```bash
-bin/kafka-server-start.sh config/server.properties
+docker compose up -d
 ```
 
-5. Create the topic cpu_data : 
+4. Create the topic cpu_data : 
 ```bash
 bin/kafka-topics.sh --create --topic cpu_data --bootstrap-server localhost:9092 --create partitions 3 --replication-factor 1
 ```
 
-6. Run the script to start producing to the topic ( producer.py ) :
+5. Run the script to start producing to the topic ( producer.py ) :
 
 ```bash
 python src/data_streaming/producer.py
 ```
 
-7. Check if the 'cpu_data' topic is receiving data :
+6. Check if the 'cpu_data' topic is receiving data :
 
 ```bash
 bin/kafka-console-consumer.sh  --topic cpu_data --bootstrap-server localhost:9092
 ```
-8. Create the topic 'anomalies' :
+7. Create the topic 'anomalies' :
 ```bash
 bin/kafka-topics.sh --create --topic anomalies --bootstrap-server localhost:9092 --create partitions 3 --replication-factor 1
 ```
 
-9. Run the script that will allow our model to detect the anomalies and publish them to the 'anomalies' topic :
+8. Run the script that will allow our model to detect the anomalies and publish them to the 'anomalies' topic :
 ```bash
 python3 src/data_streaming/detector.py
 ```
 
-10. list the anomalies from the 'anomalies' topic :
+9. list the anomalies from the 'anomalies' topic :
 ```bash
 bin/kafka-console-consumer.sh  --topic anomalies --bootstrap-server localhost:9092
-```
-
-10. Start Kafdrop UI using Docker Compose
-```bash
-docker compose up -d
 ```
