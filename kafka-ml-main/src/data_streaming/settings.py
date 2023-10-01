@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 
-DELAY = 0.01
+DELAY = 2
 NUM_PARTITIONS = 3
 KAFKA_BROKER = "localhost:9092"
 TRANSACTIONS_TOPIC = "cpu_data"
