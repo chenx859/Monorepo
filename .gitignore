@@ -1,5 +1,5 @@
-../myenv/
-../kafka-ml-main/src/data_streaming/__pycache__/
+/myenv/
+/kafka-ml-main/src/data_streaming/__pycache__/
 
 # Compiled source #
 ###################
