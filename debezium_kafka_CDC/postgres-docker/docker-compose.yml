@@ -52,3 +52,14 @@ services:
      - SCHEMA_REGISTRY_HOST_NAME=schema-registry
      - SCHEMA_REGISTRY_LISTENERS=http://schema-registry:8081,http://localhost:8081
     depends_on: [zookeeper, kafka]
+  kafdrop:
+    image: obsidiandynamics/kafdrop
+    platform:  linux/amd64
+    restart: "no"
+    ports:
+      - "9000:9000"
+    environment:
+      KAFKA_BROKERCONNECT: "host.docker.internal:9092"
+      JVM_OPTS: "-Xms16M -Xmx48M -Xss180K -XX:-TieredCompilation -XX:+UseStringDeduplication -noverify"
+    depends_on:
+      - kafka
