@@ -15,12 +15,12 @@ docker compose up -d
 2. Go to postgres container and login: 
 ```bash
 docker ps
-docker exec -it 00628bbfc724 bash
+docker exec -it 1667e3278091 bash
 psql -U postgresuser -d shipment_db -W
 select * from shipments;
 ```
 
-3. Log in to the Debezium container and execute this in a terminal:
+3. Log in to the Debezium container and execute this in a terminal to create debezium connecter:
 ```bash
 curl -H 'Content-Type: application/json' debezium:8083/connectors --data '
 {
