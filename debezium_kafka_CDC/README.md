@@ -15,7 +15,7 @@ docker compose up -d
 2. Go to postgres container and login: 
 ```bash
 docker ps
-docker exec -it 1667e3278091 bash
+docker exec -it d18401215fff bash
 psql -U postgresuser -d shipment_db -W
 select * from shipments;
 ```
@@ -60,4 +60,4 @@ kafkacat -b kafka:9092 -C \
 Inside kafka container:
 - `kafka-topics --bootstrap-server kafka:9092 --list`: List all Kafka topics 
 - `kafka-console-producer --bootstrap-server kafka:9092 --topic postgres.public.shipments`: Consult messages from a topic
-- `kafka-console-consumer --bootstrap-server kafka:9092 --topic postgres.public.shipments` --from-beginning': Consume message from a topic
+- `kafka-console-consumer --bootstrap-server kafka:9092 --topic postgres.public.shipments --from-beginning`: Consume message from a topic

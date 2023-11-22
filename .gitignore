@@ -1,6 +1,8 @@
 /myenv/
 /kafka-ml-main/src/data_streaming/__pycache__/
-
+/traffic-flow-spark-kafka-main/AGOSTO_2022/
+/traffic-flow-spark-kafka-main/AGOSTO_2022_PARQUET/
+/traffic-flow-spark-kafka-main/AGOSTO_2022_PARQUET_FINAL/
 # Compiled source #
 ###################
 *.com
