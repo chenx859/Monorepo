@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-4">
+        <div id="error" class="alert alert-danger" role="alert" style="display: none;"></div>
+        <div class="chat-window" id="chatWindow">
+            <!-- Chat messages will appear here -->
+        </div>
+
+        <div class="message-bar">
+            <form class="form-inline w-100" id="messageForm">
+                <input class="form-control mr-sm-2 flex-grow-1" type="text" placeholder="Enter your question" id="messageInput">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="submitButton">Send</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

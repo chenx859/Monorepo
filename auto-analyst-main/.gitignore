@@ -1,0 +1,11 @@
+auto_analyst/config.py
+venv
+archive.py
+data.csv
+.vscode
+.pytest_cache
+.mypy_cache
+*.egg-info
+**/__pycache__/
+logs/
+auto_analyst/config.json
