@@ -34,10 +34,6 @@ Once AutoAnalyst is running, you should see something similar to this in your we
 You can watch a comprehensive demo of the AutoAnalyst suite
 [![IMAGE ALT TEXT HERE](https://github.com/aadityaubhat/auto-analyst/blob/main/misc/youtube_thumbnail.png)](https://www.youtube.com/watch?v=fp1nv-GdKic)
 
-## Contributing
+## Medium Article
 
-Contributions to the AutoAnalyst project are welcome and appreciated. If you're interested in contributing, please see our [CONTRIBUTING.md](CONTRIBUTING.md) guide. You'll find information on how to get started, our coding standards, and how to submit your changes for review. 
-
-For major changes, please open an issue first to discuss what you would like to change. We encourage you to use the issues page for bug reports and feature requests.
-
-Together, we can build a robust, intuitive, and versatile self-service analytics suite!
+https://medium.com/data-science-at-microsoft/automating-data-analytics-with-chatgpt-827a51eaa2c
