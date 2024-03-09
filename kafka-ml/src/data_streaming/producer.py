@@ -4,7 +4,7 @@ import time
 from datetime import datetime ,timedelta 
 import numpy as np
 from settings import TRANSACTIONS_TOPIC, DELAY
-from utils import create_producer 
+from utils import create_producer, create_topic 
 _id = 0
 producer = create_producer()
 # Define the start date and time
@@ -13,6 +13,8 @@ start_date = datetime(2014, 2, 28, 14, 25, 0)
 time_interval = timedelta(minutes=5)
 # Start an infinite loop
 counter = 0
+
+# create_topic(TRANSACTIONS_TOPIC, 3, 1)
 
 if producer is not None:
     while True:

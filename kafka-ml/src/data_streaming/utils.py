@@ -2,6 +2,7 @@ import logging
 import socket
 
 from confluent_kafka import Producer, Consumer
+from confluent_kafka.admin import AdminClient, NewTopic
 
 from settings import KAFKA_BROKER
 
@@ -51,3 +52,24 @@ def create_consumer(topic, group_id):
         consumer = None
 
     return consumer
+
+def create_topic(topic, num_partitions, replication_factor):
+    # Configuration: Replace 'localhost:9092' with your Kafka broker's address
+    config = {'bootstrap.servers': 'localhost:9092'}
+
+    # Create an AdminClient
+    admin_client = AdminClient(config)
+    # Create a NewTopic object
+    new_topic = NewTopic(topic, num_partitions=num_partitions, replication_factor=replication_factor)
+
+    # Create the topic
+    fs = admin_client.create_topics([new_topic])
+
+    # Wait for each operation to finish
+    for topic, f in fs.items():
+        try:
+            f.result()  # The result itself is None
+            print(f"Topic {topic} created")
+        except Exception as e:
+            print(f"Failed to create topic {topic}: {e}")
+    return 
