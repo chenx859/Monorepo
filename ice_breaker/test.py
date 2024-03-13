@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 from langchain.chains import LLMChain
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import PromptTemplate
+from agents.linkedin_lookup_agent import lookup as linkedin_lookup_agent
 from third_parties.linkedin_dev import scrape_linkedin_profile
 
 if __name__ == "__main__":
@@ -30,13 +31,12 @@ In October 2002, eBay acquired PayPal for $1.5 billion, and that same year, with
     llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
 
     chain = LLMChain(llm=llm, prompt=summary_prompt_template)
-
-    linkedin_data = scrape_linkedin_profile(
-        "https://gist.githubusercontent.com/emarco177/0d6a3f93dd06634d95e46a2782ed7490/raw/fad4d7a87e3e934ad52ba2a968bad9eb45128665/eden-marco.json"
-    )
-    # print(linkedin_data)
-    res = chain.run(information=linkedin_data)
-    print(res)
-
-
     
+    linkedin_profile_url = linkedin_lookup_agent(name='Eden Marco')
+    print(linkedin_profile_url)
+    linkedin_profile_url = "https://gist.githubusercontent.com/emarco177/0d6a3f93dd06634d95e46a2782ed7490/raw/fad4d7a87e3e934ad52ba2a968bad9eb45128665/eden-marco.json"
+    linkedin_data = scrape_linkedin_profile(linkedin_profile_url=linkedin_profile_url)
+
+    # print(linkedin_data)
+    # res = chain.run(information=linkedin_data)
+    # print(res)

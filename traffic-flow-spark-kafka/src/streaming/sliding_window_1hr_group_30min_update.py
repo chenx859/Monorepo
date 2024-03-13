@@ -53,7 +53,7 @@ df_traffic_stream = spark\
 
 df_traffic_stream\
     .groupBy(
-        F.window("DATA HORA", "1 hour", "30 minutes")
+        F.window("DATA HORA", "1 hour", "30 minutes") # each window is 1 hour long and a new window is created every 30mins
     )\
     .count()\
     .orderBy("window")\
