@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AutoAnalyst</title>
+
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Include custom CSS for chat window -->
+    <style>
+        .chat-window {
+            height: 70vh;
+            border: 1px solid #ddd;
+            padding: 10px;
+            overflow-y: scroll;
+        }
+
+        .previous-analyses {
+            height: 70vh;
+            border: 1px solid #ddd;
+            padding: 10px;
+            overflow-y: scroll;
+            margin-right: 10px;
+        }
+
+        .message-bar {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .message {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .message.user {
+            background-color: white;
+        }
+
+        .message.autoanalyst {
+            background-color: #f2f2f2;
+        }
+
+        .query-content {
+            padding: 10px;
+            background-color: white !important;
+            border-radius: 5px;
+            color: black !important;
+            font-family: monospace;
+        }
+
+        .loading-animation {
+            // Your custom animation styless
+        }
+
+        .sender {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    {% include 'partials/_top_bar.html' %}
+
+    {% block content %}{% endblock %}
+
+    <!-- Include Bootstrap JS and jQuery -->
+    <script>
+        const csrf_token = "{{ csrf_token() }}";
+    </script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- jQuery UI library -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <!-- jqGrid library -->
+    <link rel="stylesheet" type="text/css" media="screen"
+        href="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.15.5/css/ui.jqgrid.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.15.5/jquery.jqgrid.min.js"></script>
+
+    <!-- Include clipboard.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Include custom JS -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+    <!-- plotly -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+
+</body>
+
+</html>
