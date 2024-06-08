@@ -22,7 +22,7 @@ def ice_break_with(
     linkedin_data = scrape_linkedin_profile(linkedin_profile_url=linkedin_username)
 
     twitter_username = twitter_lookup_agent(name=name)
-    tweets = scrape_user_tweets(username=twitter_username)
+    tweets = scrape_user_tweets_mock(username=twitter_username)
 
     summary_chain = get_summary_chain()
     summary_and_facts: Summary = summary_chain.invoke(
@@ -38,7 +38,7 @@ def ice_break_with(
     ice_breakers: IceBreaker = ice_breaker_chain.invoke(
         input={"information": linkedin_data, "twitter_posts": tweets}
     )
-
+    
     return (
         summary_and_facts,
         interests,
@@ -48,4 +48,5 @@ def ice_break_with(
 
 
 if __name__ == "__main__":
+    ice_break_with("Eden Marco")
     pass
