@@ -1,0 +1,22 @@
+--- Research Output ---
+Timestamp: 2025-05-05 18:03:23
+
+An apple is a round, edible fruit produced by an apple tree (Malus spp.). Fruit
+
+--- Research Output ---
+Timestamp: 2025-05-05 18:05:16
+
+Amazon is a multinational technology company known for its e-commerce platform. It was founded by Jeff Bezos in 1994 and has grown to become one of the largest online retailers in the world. Amazon offers a wide range of products and services including electronics, video streaming, cloud computing, and more.
+
+Sources: Wikipedia
+
+--- Research Output ---
+Timestamp: 2025-05-05 18:08:03
+
+Apple research
+
+--- Research Output ---
+Timestamp: 2025-05-14 18:50:54
+
+{"topic":"LangChain","summary":"LangChain is a software framework that helps facilitate the integration of","sources":[],"tools_used":["functions.wikipedia"]}
+
